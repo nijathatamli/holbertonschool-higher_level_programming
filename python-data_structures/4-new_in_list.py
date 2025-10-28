@@ -8,4 +8,3 @@ def new_in_list(my_list, idx, element):
         new_list.remove(x)
         new_list.insert(idx, element)
         return new_list
-    

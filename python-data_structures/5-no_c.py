@@ -5,4 +5,3 @@ def no_c(my_string):
             idx = my_string.index(i)
             my_string = my_string[:idx] + my_string[idx+1:]
     return my_string
-    
