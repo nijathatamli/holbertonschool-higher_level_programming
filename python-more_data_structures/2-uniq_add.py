@@ -3,6 +3,6 @@ def uniq_add(my_list=[]):
     sum = 0
     my_list = set(my_list)
     for x in my_list:
-        if type(x) == int:
+        if isinstance(x, int):
             sum += x
     return sum
