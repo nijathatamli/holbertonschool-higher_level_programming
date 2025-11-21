@@ -2,6 +2,8 @@
 """Module containing Rectangle class"""
 
 class Rectangle:
+    """This class about rectangle"""
+    
     def __init__(self,  width = 0, height = 0):
         self.width = width
         self.height = height
@@ -23,6 +25,7 @@ class Rectangle:
         return self.__height
     @height.setter
     def height(self,value):
+        """Setter for __width"""
         if not isinstance(value):
             raise TypeError("height must be integer")
         if value < 0:
