@@ -7,6 +7,7 @@
 class Rectangle:
     """This class represents a rectangle"""
     number_of_instances = 0
+    print_symbol = '#'
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -47,7 +48,7 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
-    def __str__(self, print_symbol = '#'):
+    def __str__(self):
         if self.__height == 0 or self.__width == 0:
             return ''
         return '\n'.join([self.__width * str(self.print_symbol) for _ in range(self.__height)])
@@ -55,7 +56,7 @@ class Rectangle:
     def __repr__(self):
         """Method to return recreateable instance"""
 
-        return f'Rectangle({self.__width,}, {self.__height})'
+        return f'Rectangle({self.__width}, {self.__height})'
     def __del__(self):
         """It is the method of deleting the rectangle"""
         Rectangle.number_of_instances -= 1        
