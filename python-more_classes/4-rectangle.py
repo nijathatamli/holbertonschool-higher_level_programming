@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """Module containing Rectangle class"""
 
 
@@ -38,20 +36,23 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def area(self):
         """Function for calculating area"""
         return self.__height * self.__width
+
     def perimeter(self):
         """Function for calculating perimeter"""
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
+
     def __str__(self):
+        """Return the rectangle as a '#' string"""
         if self.__height == 0 or self.__width == 0:
             return ''
         return '\n'.join([self.__width * '#' for _ in range(self.__height)])
 
     def __repr__(self):
         """Method to return recreateable instance"""
-
-        return f'Rectangle({self.__width}, {self.__height})'
+        return f"Rectangle({self.__width}, {self.__height})"
