@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """Module containing Rectangle class"""
 
 
@@ -38,9 +36,11 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def area(self):
         """Function for calculating area"""
         return self.__height * self.__width
+
     def perimeter(self):
         """Function for calculating perimeter"""
         if self.__height == 0 or self.__width == 0:
