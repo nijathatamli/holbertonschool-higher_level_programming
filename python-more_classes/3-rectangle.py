@@ -3,7 +3,6 @@
 
 """Module containing Rectangle class"""
 
-
 class Rectangle:
     """This class represents a rectangle"""
 
