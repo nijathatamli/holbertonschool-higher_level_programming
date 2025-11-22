@@ -67,6 +67,6 @@ class Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if not isinstance(b, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
-        if a >= b:
+        if a.area() >= b.area():
             return a
         return b
