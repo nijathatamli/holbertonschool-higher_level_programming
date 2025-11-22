@@ -61,13 +61,12 @@ class Rectangle:
         """It is the method of deleting the rectangle"""
         Rectangle.number_of_instances -= 1        
         print('Bye rectangle...')
-    def bigger_or_equal(self, a, b):
+    def bigger_or_equal(a, b):
         """It is the method of Compare the rectangles"""
         if not isinstance(a, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
         if not isinstance(b, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
-        if a > b:
+        if a >= b:
             return a
-        else:
-            return b
+        return b
