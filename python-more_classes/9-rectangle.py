@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-
-
 """Module containing Rectangle class"""
 
 
 class Rectangle:
     """This class represents a rectangle"""
+
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -40,37 +40,46 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def area(self):
         """Function for calculating area"""
-        return self.__height * self.__width
+        return self.__width * self.__height
+
     def perimeter(self):
         """Function for calculating perimeter"""
-        if self.__height == 0 or self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__height + self.__width)
+        return 2 * (self.__width + self.__height)
+
     def __str__(self):
+        """Return the rectangle using print_symbol"""
         if self.__height == 0 or self.__width == 0:
-            return ''
-        return '\n'.join([self.__width * str(self.print_symbol) for _ in range(self.__height)])
+            return ""
+        return "\n".join(
+            [str(self.print_symbol) * self.__width for _ in range(self.__height)]
+        )
 
     def __repr__(self):
-        """Method to return recreateable instance"""
+        """Return recreateable string"""
+        return f"Rectangle({self.__width}, {self.__height})"
 
-        return f'Rectangle({self.__width}, {self.__height})'
     def __del__(self):
         """It is the method of deleting the rectangle"""
-        Rectangle.number_of_instances -= 1        
-        print('Bye rectangle...')
-    def bigger_or_equal(a, b):
-        """It is the method of Compare the rectangles"""
-        if not isinstance(a, Rectangle):
-            raise TypeError('rect_1 must be an instance of Rectangle')
-        if not isinstance(b, Rectangle):
-            raise TypeError('rect_2 must be an instance of Rectangle')
-        if a.area() >= b.area():
-            return a
-        return b
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Compare rectangles by area"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
     @classmethod
-    def square(cls, value = 0):
-        new_instance = cls(value, value)
-        return new_instance
+    def square(cls, size=0):
+        """Return new square (width = height = size)"""
+        return cls(size, size)

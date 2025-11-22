@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """Module containing Rectangle class"""
 
 
@@ -8,10 +6,11 @@ class Rectangle:
     """This class represents a rectangle"""
 
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1 
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -40,25 +39,28 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def area(self):
         """Function for calculating area"""
         return self.__height * self.__width
+
     def perimeter(self):
         """Function for calculating perimeter"""
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
+
     def __str__(self):
+        """Return rectangle as # drawing"""
         if self.__height == 0 or self.__width == 0:
             return ''
-        return '\n'.join([self.__width * '#' for _ in range(self.__height)])
+        return '\n'.join(['#' * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        """Methods to return recreateable instance"""
+        """Return recreateable string representation"""
+        return f"Rectangle({self.__width}, {self.__height})"
 
-        return f'Rectangle({self.__width,}, {self.__height})'
     def __del__(self):
-        """It is the method of deleting the rectangle"""
-        Rectangle.number_of_instances -= 1        
-        print('Bye rectangle...')
-    
+        """Called when the instance is deleted"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
