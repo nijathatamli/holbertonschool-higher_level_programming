@@ -70,5 +70,7 @@ class Rectangle:
         if a.area() >= b.area():
             return a
         return b
-    def square(value):
-        return '\n'.join([value * '#' for _ in range(value)])
+    @classmethod
+    def square(cls, value = 0):
+        new_instance = cls(value, value)
+        return new_instance
