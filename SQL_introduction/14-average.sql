@@ -1,0 +1,1 @@
+select AVG(scores) FROM secon_table;
