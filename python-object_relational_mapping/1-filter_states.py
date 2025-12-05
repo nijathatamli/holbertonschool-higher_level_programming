@@ -5,9 +5,9 @@ if __name__ == "__main__":
     import MySQLdb
 
     db = MySQLdb.connect(
-        user = argv[1],
-        password = argv[2],
-        database = argv[3]
+        user=argv[1],
+        password=argv[2],
+        database=argv[3]
     )
     cursor = db.cursor()
 
