@@ -11,9 +11,10 @@ if __name__ == "__main__":
         database=argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM `states`" \
-    " WHERE BINARY `name` = '{}'" \
-    " ORDER BY id".format(argv[4]))
+    cursor.execute("SELECT *  \
+    FROM `states` \
+     WHERE BINARY `name` = '{}' \
+     ORDER BY id".format(argv[4]))
     for x in cursor.fetchall():
         print(x)
     if cursor:
