@@ -5,14 +5,14 @@ if __name__ == '__main__':
     from sys import argv
     import MySQLdb
     db = MySQLdb.connect(
-        user = argv[1],
-        password = argv[2],
-        database = argv[3]
+        user=argv[1],
+        password=argv[2],
+        database=argv[3]
     )
     cursor = db.cursor()
     cursor.execute("SELECT *  \
                         FROM `states` \
-                        ORRDER BY id")
+                        ORDER BY id")
     for x in cursor.fetchall():
         if x[1] == argv[4]:
             print(x)
