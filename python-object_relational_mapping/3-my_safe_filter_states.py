@@ -17,9 +17,9 @@ if __name__ == '__main__':
                     FROM `states` \
                     ORDER BY id")
 
-    for state in cursor.fetchall():
-        if state[1] == argv[4]:
-            print(state)
+    for x in cursor.fetchall():
+        if x[1] == argv[4]:
+            print(x)
 
     if cursor:
         cursor.close()
