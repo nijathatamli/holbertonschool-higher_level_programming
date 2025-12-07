@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""""that lists all cities from the database hbtn_0e_4_usa"""
+""" that takes in the name of a state as an argument and lists all cities of that state, """
 
 if __name__ == "__main__":
     import MySQLdb
@@ -10,10 +10,11 @@ if __name__ == "__main__":
         password=argv[2],
         database=argv[3]
     )
+
     cursor = db.cursor()
-    cursor.execute("SELECT c.id, c.name, s.name \
-                    FROM cities AS c \
-                    INNER JOIN states AS s ON s.id = c.state_id")
+    cursor.execute("SELECT cities.name, states.name \
+                    FROM cities \
+                    INNER JOIN states on states.id = cities.state_id ")
     for x in cursor.fetchall():
         print(x)
     if cursor:
