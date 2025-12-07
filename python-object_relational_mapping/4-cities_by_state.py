@@ -11,7 +11,7 @@ if __name__ == "__main__":
         database=argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT c.id, c.cities, s.name \
+    cursor.execute("SELECT c.id, c.name, s.name \
                     FROM cities AS c \
                     INNER JOIN states AS s ON s.id = c.state_id")
     for x in cursor.fetchall():
