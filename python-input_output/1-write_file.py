@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-This module for Read file task
+This module for Write to a file task
 """
 
 
-def read_file(filename=""):
-    """This function read file from filename var"""
-    with open(filename, 'r', encoding="UTF8") as file:
-        print(file.read(), end="")
-        file.close()
+def write_file(filename="", text=""):
+    """This function for writes a string to a text file"""
+    with open(filename, 'w', encoding="UTF8") as file:
+        return file.write(text)
